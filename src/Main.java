@@ -5,20 +5,15 @@ public class Main {
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        boolean chk = true;
-        while(chk){
-            StringTokenizer st = new StringTokenizer(br.readLine());
+        String input = "";
+        while ((input = br.readLine()) != null && !input.isEmpty()){
+            StringTokenizer st = new StringTokenizer(input);
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
-            if(a != 0 && b != 0){
-                if(a > 0 && b < 10){
-                    bw.write(a + b + "\n");
-                }
-            }else{
-                chk = false;
+            if(a > 0 && b < 10){
+                bw.write(a + b + "\n");
             }
         }
         bw.flush();
     }
-
     }
