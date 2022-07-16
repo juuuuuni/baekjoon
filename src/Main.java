@@ -1,14 +1,26 @@
-import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+
 public class Main {
-    public static void main(String args[]) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int arr[] = new int[10];
-        Set<Integer> set = new HashSet<Integer>();
-        for (int i = 0; i < 10; i++) {
-            arr[i] = Integer.parseInt(br.readLine()) % 42;
-            set.add(arr[i]);
+    public static void main(String args[]) {
+        ArrayList<Integer> selfnumber = new ArrayList<Integer>();
+        for(int i = 0; i < 10000; i++){
+             selfnumber.add(Integer.toString(i + 1));
         }
-        System.out.println(set.size());
+        for(int k = 0; k < 10000; k++){
+            int sum = d(k + 1);
+            selfnumber.remove(Integer.toString(sum));
+        }
+        for(int n = 0; n < selfnumber.size(); n++){
+            System.out.println(selfnumber.get(n));
         }
     }
+    public static int d(int n){
+        int sum = n;
+        while (n > 0){
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+    }
+
