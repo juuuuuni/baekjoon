@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String args[]) {
-        ArrayList<Integer> selfnumber = new ArrayList<Integer>();
+        ArrayList<String> selfnumber = new ArrayList<String>();
         for(int i = 0; i < 10000; i++){
              selfnumber.add(Integer.toString(i + 1));
         }
